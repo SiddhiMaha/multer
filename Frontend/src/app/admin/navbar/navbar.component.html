@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="logo">
+      <a routerLink="/dashboard">FurniFlex</a>
+      
+    </div>
+    
+    <ul class="nav-links">
+      <li><a routerLink="/dashboard">Home</a></li> 
+      <li><a (click)="navigateTo('product-list')">View Product</a></li>
+      <li><a (click)="navigateTo('product-create')">Add Product</a></li>
+
+    </ul>
+  </nav>
+  

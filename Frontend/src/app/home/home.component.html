@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Your Website</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+
+
+  <br>
+
+  <section class="hero-section">
+
+    <ngb-carousel [showNavigationArrows]="true">
+      <ng-template ngbSlide>
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="assets/Images/carosal.jpeg" alt="First Image">
+            </div>
+            <div class="col-md-6">
+              <img src="assets/Images/Q2.webp" alt="Second Image">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    
+      <ng-template ngbSlide>
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="assets/Images/quake.webp" alt="Third Image">
+            </div>
+            <div class="col-md-6">
+              <img src="assets/Images/unlmtd_feb_web.webp" alt="Fourth Image">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="container2">
+      <br>
+      <h2>Rent Furniture</h2>
+      <div class="icons-container">
+        <img src="assets/Images/living_icon.png" alt="Living Icon">
+        <img src="assets/Images/bed.png" alt="Bed Icon">
+        <img src="assets/Images/appliances.webp" alt="Appliances Icon">
+        <img src="assets/Images/deals_and_combos.webp" alt="Deals and Combos Icon">
+        <img src="assets/Images/storage_icon.webp" alt="Storage Icon">
+        <img src="assets/Images/study.webp" alt="Study Icon">
+        <img src="assets/Images/dinning.webp" alt="Dinning Icon">
+        <img src="assets/Images/kids.webp" alt="Kids Icon">
+      </div>
+    </div>
+    
+    
+    
+    <div class="Middle">
+    <img src="assets/Images/Middle.webp" alt="" height="240px" width="240px" class="middle-image" width="1000px">
+  </div>
+  </section>
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>GRAND GLOBAL BRANDS</h2>
+        <!-- Carousel -->
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <!-- Display first 3 products -->
+                <div class="col-md-4" *ngFor="let product of products.slice(0, 3)">
+                  <div class="card">
+                    <img [src]="" class="card-img-top" [alt]="product.name">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <h5>{{product.price}} -/Rs</h5>
+                      <!-- Add more details about the product if needed -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousel items with additional product cards here -->
+            <div class="carousel-item">
+              <div class="row">
+                <!-- Display next 3 products -->
+                <div class="col-md-4" *ngFor="let product of products.slice(3, 6)">
+                  <div class="card">
+                    <img [src]="" class="card-img-top" [alt]="product.name">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <!-- Add more details about the product if needed -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel navigation buttons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+       </div>
+      </div>
+    </div>
+    </div>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+ 
+ 
+ 
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myCarousel = new bootstrap.Carousel(document.querySelector('.carousel'), {
+        interval: 2000, // Set interval between slides (milliseconds)
+        wrap: true // Set to false to disable wrapping
+      });
+    });
+  </script>
+
+</body>
+
+</html>

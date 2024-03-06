@@ -1,0 +1,32 @@
+.btn{
+ margin-top: 10px;
+}
+.custom-form {
+    background-color: #f8f9fa; /* Form background color */
+    border-radius: 8px; /* Form border radius */
+    padding: 20px; /* Form padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Form shadow */
+  }
+  
+  .custom-form .form-group label {
+    font-weight: bold; /* Label font weight */
+  }
+  
+  .custom-form .form-control {
+    border-radius: 6px; /* Input field border radius */
+  }
+  
+  .custom-form .btn-primary {
+    background-color: #007bff; /* Button background color */
+    border-color: #007bff; /* Button border color */
+  }
+  
+  .custom-form .btn-primary:hover {
+    background-color: #0056b3; /* Button hover background color */
+    border-color: #0056b3; /* Button hover border color */
+  }
+  .m{
+    margin-top: 10px;
+color: #3ab4ac;
+  }
+  

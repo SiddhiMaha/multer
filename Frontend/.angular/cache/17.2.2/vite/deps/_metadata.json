@@ -1,0 +1,67 @@
+{
+  "hash": "35081149",
+  "configHash": "3a1743e3",
+  "lockfileHash": "d2362b2c",
+  "browserHash": "650ec18d",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "6bf4ac5a",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "dfaaed38",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "2211a9e4",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "43ebd074",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "bcd13c67",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "344ac450",
+      "needsInterop": false
+    },
+    "@ng-bootstrap/ng-bootstrap": {
+      "src": "../../../../../node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs",
+      "file": "@ng-bootstrap_ng-bootstrap.js",
+      "fileHash": "5a8a6bd2",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Q7H7CFHU": {
+      "file": "chunk-Q7H7CFHU.js"
+    },
+    "chunk-PJY4DKKA": {
+      "file": "chunk-PJY4DKKA.js"
+    },
+    "chunk-BHAVEQWS": {
+      "file": "chunk-BHAVEQWS.js"
+    },
+    "chunk-Z63DWBEB": {
+      "file": "chunk-Z63DWBEB.js"
+    },
+    "chunk-UDHPEJ5C": {
+      "file": "chunk-UDHPEJ5C.js"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.footer {
+    margin-top: 20px;
+    background-color: #3ab5c4;
+    color: white;
+    padding: 50px 0;
+  }
+  
+  .footer-menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-menu li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .footer-menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-contact h4 {
+    margin-bottom: 20px;
+  }
+  
+  .footer-contact p {
+    margin-bottom: 5px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .social-icons a:hover {
+    color: #ffc107; /* Change color on hover */
+  }
+  
+  .footer-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 80px;
+  }
+  
+  .footer-menu li {
+    display: block;
+    margin-bottom: 10px;
+     /* Add some bottom margin to separate menu items */
+  }
+  
+  .footer-menu li:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+  }
+  
+  .footer-menu li a {
+    color: #fff; /* Set link color */
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .footer-menu li a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+  
