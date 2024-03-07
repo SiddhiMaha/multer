@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../../product';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product-list',
@@ -9,31 +10,31 @@ import { Product } from '../../product';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
   products: Product[] = [];
 
-  constructor(private router: Router, private productService: ProductService) { }
 
-  // ngOnInit(): void {
-  //   this.productService.getProducts().subscribe(
-  //     (products: Product[]) => {
-  //       this.products = products;
-  //     },
-  //     (error: any) => {
-  //       console.log('Error fetching products:', error);
-  //     }
-  //   );
-  // }
+  constructor(private router: Router, private productService: ProductService, private httpClient:HttpClient)  { }
+
+ 
   ngOnInit(): void {
   this.productService.getProducts().subscribe(
     (products: Product[]) => {
-      // console.log(products); 
+       console.log(products); 
+
       this.products = products;
+       this.products.forEach(product => {
+  
+          console.log('Image:', product.image); // Change imageUrl to the desired property
+        });
     },
     (error: any) => {
       console.log('Error fetching products:', error);
     }
   );
 }
+
+
 
 
 editProduct(productId: string) {
@@ -44,14 +45,12 @@ deleteProduct(productId: string): void {
   this.productService.deleteProduct(productId).subscribe(
     () => {
       console.log('Product deleted successfully');
-      // Optionally, update the products list to reflect the deletion
+     
     },
     (error: any) => {
       console.log('Error deleting product:', error);
-      // Handle error cases, e.g., display an error message
+     
     }
   );
 }
-
-  
 }

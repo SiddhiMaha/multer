@@ -1,4 +1,3 @@
-
 <app-navbar></app-navbar>
 
 <div class="container mt-5">
@@ -19,13 +18,13 @@
         </div>
         <div class="form-group">
           <label for="price">Price:</label>
-          <input type="number" class="form-control" id="price" formControlName="price" placeholder="Enter price">
+          <input type="number" class="form-control" id="price"formControlName="price" placeholder="Enter price">
         </div>
-        <div >
-          <label for="image">Product Image:</label>
-          <input type="file" name="file" (change)="upload($event)"/>
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input type="file" class="form-control-file" id="image" name="image" (change)="onFileChange($event)">
         </div>
-      
+        
         <button type="submit" class="btn btn-primary">Submit</button> 
       </form>
     </div>

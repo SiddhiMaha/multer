@@ -9,6 +9,7 @@ import { Product } from '../product';
 export class ProductService {
 
   private apiUrl = 'http://localhost:3000/api/v1/products';
+  private imageUploadUrl = 'http://localhost:3000/api/upload';
 
   constructor(private http: HttpClient) { }
 
@@ -21,14 +22,11 @@ export class ProductService {
     return this.http.get<Product>(url);
   }
 
-  addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, product);
-  }
-
-  // Add a method to add a product with an image
-  addProductWithImage(productData: FormData): Observable<Product> {
+  addProduct(productData: FormData): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, productData);
   }
+
+  
 
   updateProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(`${this.apiUrl}/${product._id}`, product);

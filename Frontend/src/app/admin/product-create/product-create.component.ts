@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
-import { Product } from '../../product';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../../product';
+
 
 @Component({
   selector: 'app-product-create',
@@ -10,48 +11,51 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-  productForm: FormGroup;
+  productForm!: FormGroup;
 
-  constructor(private productService: ProductService, private fb: FormBuilder ,private httpclient:HttpClient) {
+  constructor(private fb: FormBuilder, private productService: ProductService,private httpclient:HttpClient) { }
+
+  ngOnInit(): void {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       category: ['', Validators.required],
-      price: [0, Validators.required],
-      
-      // Initialize with null for file input
+      price: ['', Validators.required],
+      image: ['']
     });
   }
-  upload(event: any) {
-    console.log(event); // Check the event object
-    const file = event.target.files[0];
-    console.log(file); // Check if file is retrieved correctly
-    const formData = new FormData();
-    formData.append('file', file);
-    this.httpclient.post('http://localhost:3000/api/upload', formData).subscribe((d) => {
-      console.log(d); // Log the response from the backend
-    },(error:any) => {
-      console.error(error);
-    });
-  }
-  
-  
-  onSubmit(): void {
-    if (this.productForm.valid) {
-      // If the form is valid, you can extract the form data and submit it
-      const productData = this.productForm.value; // Extracting form data
-      this.productService.addProduct(productData).subscribe(
-        (response:any) => {
-          console.log('Product created successfully', response);
-          // Optionally, you can reset the form after successful submission
-          this.productForm.reset();
-        },
-        (error:any) => {
-          console.error('Error creating product', error);
-        }
-      );
+
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.productForm.get('image')!.setValue(file);
     }
   }
 
-  ngOnInit(): void {}
-}
+  onSubmit() {
+    if (this.productForm.invalid) {
+      return;
+    }
+  
+    const productData = this.productForm.value;
+    const formData = new FormData();
+  
+    formData.append('name', productData.name);
+    formData.append('description', productData.description);
+    formData.append('category', productData.category);
+    formData.append('price', productData.price);
+    formData.append('image', productData.image);
+  
+    this.productService.addProduct(formData).subscribe(
+      (response) => {
+        console.log('Product created successfully:', response);
+        // Handle success
+      },
+      (error) => {
+        console.error('Error creating product:', error);
+        // Handle error
+      }
+    );
+  }
+  
+  }
