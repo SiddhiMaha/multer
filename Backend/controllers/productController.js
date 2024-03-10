@@ -60,7 +60,7 @@ async function createProduct(req, res) {
       //const imageUrl = req.file ? req.file.path : '';
       let imageUrl = '';
       if (req.file) {
-        // Remove the root directory from the file path
+        
         imageUrl = req.file.path.replace(req.file.destination + '/', '');
       }
       const product = new Product({
@@ -91,7 +91,7 @@ async function updateProduct(req, res) {
     }
 
    
-    product.name = updatedData.productname;
+    product.name = updatedData.name;
     product.description = updatedData.description;
     product.image = updatedData.image;
     product.price = updatedData.price;

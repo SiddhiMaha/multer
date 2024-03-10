@@ -4,17 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule,HttpClient,provideHttpClient} from '@angular/common/http';
+//import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
  import { ProductService } from './admin/product.service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { ProductspageComponent } from './productspage/productspage.component';
-
-
-
 
 
 
@@ -25,6 +22,7 @@ import { ProductspageComponent } from './productspage/productspage.component';
     HomeComponent,
     FooterComponent,
     ProductspageComponent,
+    
   
     
     
@@ -35,15 +33,15 @@ import { ProductspageComponent } from './productspage/productspage.component';
     BrowserModule,
     AdminModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    //ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
      NgbModule
     
   ],
   providers: [
-    
-    [ProductService],HttpClient
+    ProductService,
+  
   ],
   bootstrap: [AppComponent]
 })

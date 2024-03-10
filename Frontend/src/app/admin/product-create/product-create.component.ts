@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../../product';
 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-create',
@@ -12,8 +12,10 @@ import { Product } from '../../product';
 })
 export class ProductCreateComponent implements OnInit {
   productForm!: FormGroup;
+  successMessage: string = '';
 
-  constructor(private fb: FormBuilder, private productService: ProductService,private httpclient:HttpClient) { }
+
+  constructor(private fb: FormBuilder, private productService: ProductService,private httpclient:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.productForm = this.fb.group({
@@ -49,7 +51,8 @@ export class ProductCreateComponent implements OnInit {
     this.productService.addProduct(formData).subscribe(
       (response) => {
         console.log('Product created successfully:', response);
-        // Handle success
+        this.successMessage = 'Product added successfully!';
+        this.router.navigate(['/product-list']);
       },
       (error) => {
         console.error('Error creating product:', error);

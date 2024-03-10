@@ -40,7 +40,12 @@ export class ProductListComponent implements OnInit {
 editProduct(productId: string) {
   this.router.navigate(['/edit-product', productId]);
 }
-
+confirmDelete(productId: string): void {
+  const confirmation = window.confirm('Are you sure you want to delete this product?');
+  if (confirmation) {
+    this.deleteProduct(productId);
+  }
+}
 deleteProduct(productId: string): void {
   this.productService.deleteProduct(productId).subscribe(
     () => {

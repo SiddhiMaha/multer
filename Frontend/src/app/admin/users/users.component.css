@@ -1,0 +1,58 @@
+/* users.component.css */
+
+.table-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border-radius: 8px; /* Optional: Add border radius for a more rounded appearance */
+    padding: 10px; /* Optional: Add padding for spacing */
+    margin:0 auto;
+    max-width: 800px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-table th {
+    background-color: #3ab4ac;
+  }
+  
+  .user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .user-table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .pagination span {
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-right: 4px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+  }
+  
+  .pagination span.active {
+    background-color:#3ab4ac;
+    color: #fff;
+    border-color:#3ab4ac;
+  }
+  thead th{
+color: white;
+  }

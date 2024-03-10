@@ -41,3 +41,20 @@ exports.loginUser = asyncErrorHandler(async (req, res, next) => {
 
     sendToken(user, 201, res);
 });
+exports.getAllUsers = asyncErrorHandler(async (req, res, next) => {
+    const users = await User.find();
+
+    res.status(200).json({ success: true, users });
+});
+
+exports.getUserById = asyncErrorHandler(async (req, res, next) => {
+    const userId = req.params.id;
+
+    const user = await User.findById(userId);
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    res.status(200).json({ success: true, user });
+});
